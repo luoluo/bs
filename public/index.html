@@ -1,157 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Chartkick.js</title>
     <meta charset="utf-8">
-    <script>
-      // var Chartkick = {language: "de"};
-    </script>
-    <script src="http://www.google.com/jsapi"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.2/zepto.min.js"></script> -->
-    <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-    <!-- <script src="http://code.highcharts.com/2.1.9/highcharts.js"></script> -->
-    <script src="./chartkick.js"></script>
+    <title>Carousel Template for Bootstrap</title>
 
-    <style>
-      body {
-        padding: 20px;
-        margin: 0;
-        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-      }
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-      h1 {
-        text-align: center;
-      }
-    </style>
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
   </head>
+<!-- NAVBAR
+================================================== -->
   <body>
-    <h1>Line Chart</h1>
-    <div id="chart-1" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-1", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8});
-    </script>
+    <div class="navbar-wrapper">
+      <div class="container">
 
-    <h1>Pie Chart</h1>
-    <div id="chart-2" style="height: 300px;"></div>
-    <script>
-      new Chartkick.PieChart("chart-2", [["Blueberry",44],["Strawberry",23],["Banana",22],["Apple",21],["Grape",13]]);
-    </script>
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Web PV Report System</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <h1>Column Chart</h1>
-    <div id="chart-3" style="height: 300px;"></div>
-    <script>
-      new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]);
-    </script>
+      </div>
+    </div>
 
-    <h1>Bar Chart</h1>
-    <div id="chart-100" style="height: 300px;"></div>
-    <script>
-      new Chartkick.BarChart("chart-100", [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]);
-    </script>
 
-    <h1>Area Chart</h1>
-    <div id="chart-102" style="height: 300px;"></div>
-    <script>
-      new Chartkick.AreaChart("chart-102", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8});
-    </script>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>What's hot?</h1>
+              <p>Show the hot web around you</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">View detail</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>When are the visitors active?.</h1>
+              <p>Show the visitors' active time.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">View detail</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Where are the visitors from?.</h1>
+              <p>Show the area the visitors come from.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">View detail</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
 
-    <h1>Multiple Series Line</h1>
-    <div id="chart-4" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-4", [{"name":"Workout","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":3,"2013-03-03 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":4,"2013-03-17 00:00:00 -0700":3,"2013-03-24 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":3}},{"name":"Go to concert","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":0,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":0}},{"name":"Wash face","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":1}},{"name":"Call parents","data":{"2013-02-10 00:00:00 -0800":5,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":2,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":1,"2013-03-31 00:00:00 -0700":0}},{"name":"Eat breakfast","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":2,"2013-02-24 00:00:00 -0800":1,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":2,"2013-03-24 00:00:00 -0700":3,"2013-03-31 00:00:00 -0700":0}}]);
-    </script>
 
-    <h1>Multiple Series Bar</h1>
-    <div id="chart-101" style="height: 300px;"></div>
-    <script>
-      new Chartkick.BarChart("chart-101", [{name: "Series A", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}, {name: "Series B", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}], {max: 80});
-    </script>
 
-    <h1>Multiple Series Bar Stacked</h1>
-    <div id="chart-104" style="height: 300px;"></div>
-    <script>
-      new Chartkick.BarChart("chart-104", [{name: "Series A", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}, {name: "Series B", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}], {max: 80, stacked: true});
-    </script>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <h1>Multiple Series Column Stacked</h1>
-    <div id="chart-105" style="height: 300px;"></div>
-    <script>
-      new Chartkick.ColumnChart("chart-105", [{name: "Series A", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}, {name: "Series B", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}], {max: 80, stacked: true});
-    </script>
+    <div class="container marketing">
 
-    <h1>Multiple Series Area</h1>
-    <div id="chart-103" style="height: 300px;"></div>
-    <script>
-      new Chartkick.AreaChart("chart-103", [{"name":"Workout","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":3,"2013-03-03 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":4,"2013-03-17 00:00:00 -0700":3,"2013-03-24 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":3}},{"name":"Go to concert","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":0,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":0}},{"name":"Wash face","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":1}},{"name":"Call parents","data":{"2013-02-10 00:00:00 -0800":5,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":2,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":1,"2013-03-31 00:00:00 -0700":0}},{"name":"Eat breakfast","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":2,"2013-02-24 00:00:00 -0800":1,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":2,"2013-03-24 00:00:00 -0700":3,"2013-03-31 00:00:00 -0700":0}}]);
-    </script>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>What's hot</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>When hot</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>Where hot</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
-    <h1>Remote</h1>
-    <div id="chart-5" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-5", "remote.json");
-    </script>
 
-    <h1>One Series</h1>
-    <div id="chart-6" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-6", [{name: "Series A", data: {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8}}]);
-    </script>
+      <!-- START THE FEATURETTES -->
 
-    <h1>Library Option</h1>
-    <div id="chart-7" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-7", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8}, {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
-    </script>
+      <hr class="featurette-divider">
 
-    <h1>Geo Chart</h1>
-    <div id="chart-8" style="height: 300px;"></div>
-    <script>
-      new Chartkick.GeoChart("chart-8", [["United States",44],["Germany",23],["Brazil",22],["Canada",21],["France",13]]);
-    </script>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Show what's hot. <span class="text-muted">Web and query.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
 
-    <h1>Markers</h1>
-    <div id="chart-9" style="height: 300px;"></div>
-    <script>
-      new Chartkick.GeoChart("chart-9", [["Rome",44],["Milan",23],["Naples",22],["Turin",21]], {library: {region: "IT", displayMode: "markers", colorAxis: {colors: ["#e37b33", "#e37b33"]}}});
-    </script>
+      <hr class="featurette-divider">
 
-    <h1>Discrete Line Chart</h1>
-    <div id="chart-200" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-200", [["United States",44],["Germany",23],["Brazil",22],["Canada",21],["France",13]], {"discrete": true});
-    </script>
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Show when people active. <span class="text-muted">By the time peroid.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
 
-    <h1>Discrete Area Chart</h1>
-    <div id="chart-201" style="height: 300px;"></div>
-    <script>
-      new Chartkick.AreaChart("chart-201", [["United States",44],["Germany",23],["Brazil",22],["Canada",21],["France",13]], {"discrete": true});
-    </script>
+      <hr class="featurette-divider">
 
-    <h1>Discrete Multiple Series</h1>
-    <div id="chart-203" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-203", [{name: "Series A", data: [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]}, {name: "Series B", data: [["0",22],["1",36],["2",38],["3",31],["4",30],["5",3],["6",17]]}], {"discrete": true});
-    </script>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Show where visitors come from. <span class="text-muted">As a map.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
 
-    <h1>Min Null</h1>
-    <div id="chart-202" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-202", {"2013-02-10 00:00:00 -0800":200,"2013-02-11 00:00:00 -0800":206,"2013-02-12 00:00:00 -0800":203,"2013-02-13 00:00:00 -0800":202,"2013-02-14 00:00:00 -0800":205,"2013-02-15 00:00:00 -0800":203}, {"min": null});
-    </script>
+      <hr class="featurette-divider">
 
-    <h1>Colors</h1>
-    <div id="chart-204" style="height: 300px;"></div>
-    <script>
-      new Chartkick.LineChart("chart-204", [{"name":"Workout","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":3,"2013-03-03 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":4,"2013-03-17 00:00:00 -0700":3,"2013-03-24 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":3}},{"name":"Go to concert","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":0,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":0}},{"name":"Wash face","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":1}},{"name":"Call parents","data":{"2013-02-10 00:00:00 -0800":5,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":2,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":1,"2013-03-31 00:00:00 -0700":0}},{"name":"Eat breakfast","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":2,"2013-02-24 00:00:00 -0800":1,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":2,"2013-03-24 00:00:00 -0700":3,"2013-03-31 00:00:00 -0700":0}}], {"colors": ["#999", "pink"]});
-    </script>
+      <!-- /END THE FEATURETTES -->
 
-    <h1>Pie Colors</h1>
-    <div id="chart-205" style="height: 300px;"></div>
-    <script>
-      new Chartkick.PieChart("chart-205", [["Blueberry",44],["Strawberry",23],["Banana",22],["Apple",21],["Grape",13]], {"colors": ["#999", "pink"]});
-    </script>
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+    <!--<script src="../../assets/js/docs.min.js"></script> -->
   </body>
 </html>
