@@ -72,14 +72,29 @@
         </div>
       </div>
     </div>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            lf2014 did all of this.
+            <li class="active">
+            <a href="reportDemo2.html">综合报表</a></li>
+            <li><a href="totalAmount.html">网络访问总量</a></li>
+            <li><a href="hotofweb.html">网络热点报告</a></li>
+            <li><a href="recentMounth.html">近一月用户访问量</a></li>
+            <li><a href="recent24hour.html">最近24小时用户访问量</a></li>
+            <li><a href="kindofuser.html">各类用户占比</a></li>
+            <li><a href="areaofuser.html">访问地域分布</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+    <h3>访问地域分布</h3>
+    <div id="chart-8" style="height: 300px;"></div>
+    <script>
+      new Chartkick.GeoChart("chart-8", [["United States",44],["Germany",23],["Brazil",22],["Canada",21],["France",13],["China",100]], {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    </script>
 
         </div>
       </div>
