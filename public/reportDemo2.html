@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../assets/ico/favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <script>
+      // var Chartkick = {language: "de"};
+    </script>
+    <script src="http://www.google.com/jsapi"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.2/zepto.min.js"></script> -->
+    <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+    <!-- <script src="http://code.highcharts.com/2.1.9/highcharts.js"></script> -->
+    <script src="./javascripts/chartkick.js"></script>
+
+    <style>
+      body {
+        padding: 20px;
+        margin: 0;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.1/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+              <a class="navbar-brand" href="index.html">用户访问数量展示系统</a>
+                <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="reportDemo1.html">查看统计情况</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+                </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active">
+            <a href="#">综合报表</a></li>
+            <li><a href="#">网络访问总量</a></li>
+            <li><a href="#">网络热点报告</a></li>
+            <li><a href="#">近一月用户访问量</a></li>
+            <li><a href="#">最近24小时用户访问量</a></li>
+            <li><a href="#">各类用户占比</a></li>
+            <li><a href="#">访问地域分布</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+    <h3>近一月用户访问量</h3>
+    <div id="chart-1" style="height: 300px;"></div>
+    <script>
+    jQuery.get('format', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.LineChart("chart-1", str, {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    });
+    </script>
+    <h3>最近24小时用户访问量</h3>
+    <div id="chart-12" style="height: 300px;"></div>
+    <script>
+    jQuery.get('dailyAmount', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.LineChart("chart-12", str, {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    });
+    </script>
+
+    <h3>各类用户占比</h3>
+    <div id="chart-2" style="height: 300px;"></div>
+    <script>
+    jQuery.get('format4Category', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.PieChart("chart-2", str, {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"},  "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    });
+    </script>
+
+    <h3>网络访问总量</h3>
+    <div id="chart-3" style="height: 300px;"></div>
+    <script>
+    jQuery.get('format', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.ColumnChart("chart-3", str, {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    });
+    </script>
+
+    <h3>Library Option</h3>
+    <div id="chart-7" style="height: 300px;"></div>
+    <script>
+      new Chartkick.LineChart("chart-7", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8}, {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    </script>
+
+    <h3>访问地域分布</h3>
+    <div id="chart-8" style="height: 300px;"></div>
+    <script>
+      new Chartkick.GeoChart("chart-8", [["United States",44],["Germany",23],["Brazil",22],["Canada",21],["France",13],["China",100]], {"library": {"backgroundColor": "#eee", "chart": {"zoomType": "x"}, "legend": {"position": "top"}, "hAxis": {"title": "Time"}, "vAxis": {"title": "Count"}}});
+    </script>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+  </body>
+</html>
