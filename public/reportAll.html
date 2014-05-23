@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Chartkick.js</title>
-    <h1> The PV details as follows </h1>
+    <h1> 用户访问数量展示系统</h1>
     <meta charset="utf-8">
     <script>
       // var Chartkick = {language: "de"};
@@ -29,22 +29,44 @@
     </style>
   </head>
   <body>
-    <h1>Line Chart</h1>
+    <h1>近一月用户访问量</h1>
     <div id="chart-1" style="height: 300px;"></div>
     <script>
-      new Chartkick.LineChart("chart-1", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8});
+    jQuery.get('format', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.LineChart("chart-1", str);
+    });
     </script>
 
-    <h1>Pie Chart</h1>
+    <h1>最近24小时用户访问量</h1>
+    <div id="chart-12" style="height: 300px;"></div>
+    <script>
+    jQuery.get('format', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.LineChart("chart-12", str);
+    });
+    </script>
+
+    <h1>各类用户占比</h1>
     <div id="chart-2" style="height: 300px;"></div>
     <script>
-      new Chartkick.PieChart("chart-2", [["Blueberry",44],["Strawberry",23],["Banana",22],["Apple",21],["Grape",13]]);
+    jQuery.get('format4Category', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.PieChart("chart-2", str);
+    });
     </script>
 
-    <h1>Column Chart</h1>
+    <h1>网络访问总量</h1>
     <div id="chart-3" style="height: 300px;"></div>
     <script>
-      new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]]);
+    jQuery.get('format', function(data) {
+      var str = {"2014-03-02":3}
+      str = JSON.parse(data)
+      new Chartkick.ColumnChart("chart-3", str);
+    });
     </script>
 
     <h1>Bar Chart</h1>
